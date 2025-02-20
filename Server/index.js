@@ -7,6 +7,14 @@ const router = require('./Routes/authRoute')
 const connectToDb = require('./Config/db')
 const db_uri = process.env.DB_URI
 
+const cookieParser = require('cookie-parser')
+app.use(cookieParser())
+app.use(express.urlencoded({extended: false}))
+
+
+
+
+
 app.use('/', router)
 
 const port = process.env.PORT || 9090
